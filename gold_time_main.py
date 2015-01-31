@@ -68,6 +68,13 @@ class MainWindow(QtGui.QMainWindow):
         base_meditation_time_e = evn_med_time + delta_time
 
         wake_time = gold_time_lib.get_gold_time()
+        # One minute
+        if (int(round(((wake_time-cur_time).total_seconds()), 0)) in range(290, 301)) or \
+                int(round(((base_meditation_time_m-cur_time).total_seconds()), 0)) in range(290, 301) or \
+                int(round(((base_meditation_time_e-cur_time).total_seconds()), 0)) in range(290, 301):
+            self.trayIcon.showMessage('Time is coming!', 'Gold time today at \n ' + str(wake_time) + '\n Meditation time at: \n' + str(base_meditation_time_m) + '\nand\n' + str(base_meditation_time_e), QSystemTrayIcon.Information, 10000)
+
+        # 5 minutes
         if (int(round(((wake_time-cur_time).total_seconds()), 0)) in range(50, 61)) or \
                 int(round(((base_meditation_time_m-cur_time).total_seconds()), 0)) in range(50, 61) or \
                 int(round(((base_meditation_time_e-cur_time).total_seconds()), 0)) in range(50, 61):
