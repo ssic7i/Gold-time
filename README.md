@@ -16,3 +16,8 @@ Meditation - http://sensei.org.ua/practiki/prayers/vseobschaya-molitva
 At 7:00 GMT and 19:00 GMT
 
 gold_time.png - https://openclipart.org/detail/196027/yazidi-sun-21-rays-by-magirly-196027
+
+
+Dependency: pyqt4
+
+Tested on python 2.7
